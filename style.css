@@ -38,7 +38,8 @@ html {
 
   --header-h: 64px;
   --demo-h: 40px;
-  --offset: calc(var(--demo-h) + var(--header-h));
+  --lunch-h: 0px;
+  --offset: calc(var(--demo-h) + var(--header-h) + var(--lunch-h));
 
   --r: 8px;
   --shadow: 0 2px 16px rgba(26,58,92,.10);
@@ -81,6 +82,69 @@ a {
   letter-spacing: .1em;
   z-index: 9999;
 }
+
+/* ===== LUNCH BAR ===== */
+.lunch-bar {
+  position: fixed;
+  top: calc(var(--demo-h) + var(--header-h));
+  left: 0;
+  right: 0;
+  background: #fff8e8;
+  border-bottom: 2px solid #e8a020;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  z-index: 980;
+  flex-wrap: wrap;
+}
+
+.lunch-bar-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.lunch-bar-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: #7a5200;
+  letter-spacing: .02em;
+  line-height: 1.4;
+  word-break: normal;
+  text-align: center;
+}
+
+.lunch-bar-text strong {
+  color: #c07800;
+}
+
+.lunch-bar-badge {
+  background: #e8a020;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ===== STATUS CHIP ===== */
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: .04em;
+}
+
+.chip-open   { background: #e8f5e9; color: #2e7d32; }
+.chip-lunch  { background: #fff3e0; color: #a05000; }
+.chip-closed { background: #f5f5f5; color: #757575; }
 
 /* ===== HEADER ===== */
 .site-header {
@@ -824,6 +888,7 @@ section {
   :root {
     --header-h: 70px;
     --demo-h: 36px;
+    --lunch-h: 0px;
   }
 
   body { font-size: 17px; }
