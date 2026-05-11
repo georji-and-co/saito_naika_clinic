@@ -929,3 +929,167 @@ section {
 @media (max-width: 767px) {
   body { padding-bottom: 64px; }
 }
+
+/* ===== POLICY SECTION ===== */
+.policy-section {
+  background: var(--white);
+  overflow: hidden;
+}
+
+.policy-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.policy-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 20px 18px;
+}
+
+.policy-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.policy-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), var(--teal-l));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.policy-icon-wrap svg {
+  width: 22px !important;
+  height: 22px !important;
+  overflow: visible;
+}
+
+.policy-card-head h3 {
+  font-family: var(--font-min);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.4;
+}
+
+.policy-card p {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.9;
+}
+
+/* ===== RECRUIT SECTION ===== */
+.recruit-section {
+  background: var(--warm);
+  overflow: hidden;
+}
+
+.recruit-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.recruit-card {
+  background: var(--white);
+  border-radius: var(--r);
+  padding: 20px 16px;
+  box-shadow: var(--shadow);
+}
+
+.recruit-badge {
+  display: inline-block;
+  background: var(--teal);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.recruit-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.recruit-row {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  align-items: flex-start;
+}
+
+.recruit-label {
+  color: var(--text-s);
+  font-size: 11px;
+  flex-shrink: 0;
+  padding-top: 2px;
+  min-width: 56px;
+}
+
+.recruit-value {
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.recruit-cta {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.recruit-cta p {
+  font-size: 14px;
+  color: var(--text-s);
+  margin-bottom: 14px;
+}
+
+.recruit-tel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--teal);
+  color: #fff;
+  border-radius: 30px;
+  padding: 13px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+
+.recruit-tel-btn svg {
+  width: 18px !important;
+  height: 18px !important;
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .policy-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .policy-card-head h3 { font-size: 17px; }
+  .policy-card p       { font-size: 15px; }
+
+  .recruit-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 600px; }
+  .recruit-badge  { font-size: 14px; }
+  .recruit-label  { font-size: 13px; min-width: 68px; }
+  .recruit-value  { font-size: 15px; }
+  .recruit-cta p  { font-size: 16px; }
+}
