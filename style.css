@@ -21,17 +21,17 @@ html {
 
 /* ===== CSS VARIABLES ===== */
 :root {
-  --navy:    #1a3a5c;
-  --navy-d:  #122847;
-  --teal:    #2a7a8a;
-  --teal-l:  #3a9aaa;
-  --cream:   #faf8f4;
-  --warm:    #f5f0e8;
+  --navy:    #1a7a8a;
+  --navy-d:  #0e5f6e;
+  --teal:    #2aaa8a;
+  --teal-l:  #3abba0;
+  --cream:   #f4fbfa;
+  --warm:    #e8f7f4;
   --white:   #ffffff;
-  --text:    #2c3e50;
-  --text-s:  #5a6a7a;
-  --border:  #dde4ea;
-  --accent:  #c04a3a;
+  --text:    #2c3e3a;
+  --text-s:  #5a7470;
+  --border:  #c8e8e0;
+  --accent:  #e07020;
 
   --font-min: 'Shippori Mincho', serif;
   --font-san: 'Noto Sans JP', sans-serif;
@@ -48,7 +48,7 @@ body {
   font-family: var(--font-san);
   color: var(--text);
   background: var(--cream);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
 }
@@ -89,13 +89,14 @@ a {
   left: 0;
   right: 0;
   height: var(--header-h);
-  background: var(--navy);
+  background: var(--white);
+  border-bottom: 2px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
   z-index: 1000;
-  box-shadow: 0 2px 12px rgba(0,0,0,.18);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
 }
 
 .header-logo {
@@ -134,7 +135,7 @@ a {
   font-family: var(--font-min);
   font-size: 14px;
   font-weight: 700;
-  color: #fff;
+  color: var(--navy-d);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -142,7 +143,7 @@ a {
 
 .header-logo-text .sub {
   font-size: 10px;
-  color: rgba(255,255,255,.6);
+  color: var(--text-s);
   white-space: nowrap;
 }
 
@@ -150,10 +151,10 @@ a {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.2);
+  background: var(--teal);
+  border: none;
   border-radius: 24px;
-  padding: 6px 14px;
+  padding: 7px 14px;
   flex-shrink: 0;
 }
 
@@ -183,7 +184,7 @@ main {
 
 /* ===== HERO ===== */
 .hero {
-  background: linear-gradient(135deg, var(--navy-d) 0%, var(--navy) 50%, var(--teal) 100%);
+  background: linear-gradient(135deg, #0e7a6a 0%, #1aaa8a 50%, #2abba0 100%);
   padding: 60px 20px 56px;
   text-align: center;
   position: relative;
@@ -421,15 +422,15 @@ section {
 }
 
 .schedule-table thead th {
-  background: var(--navy);
+  background: var(--teal);
   color: #fff;
   font-size: 12px;
   font-weight: 700;
 }
 
-.schedule-table thead th.day-sat { background: #1a5a9a; }
+.schedule-table thead th.day-sat { background: #1a9a70; }
 .schedule-table thead th.day-sun,
-.schedule-table thead th.day-wed { background: #8a1a1a; }
+.schedule-table thead th.day-wed { background: #c07050; }
 
 .schedule-table .row-label {
   background: #f0f4f8;
@@ -491,7 +492,7 @@ section {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--navy), var(--teal));
+  background: linear-gradient(135deg, var(--teal), var(--teal-l));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -620,7 +621,7 @@ section {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--navy);
+  background: var(--teal);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -648,7 +649,7 @@ section {
 
 /* ===== CONTACT SECTION ===== */
 .contact-section {
-  background: linear-gradient(135deg, var(--navy-d), var(--teal));
+  background: linear-gradient(135deg, #0e7a6a, #2abba0);
   contain: paint;
 }
 
@@ -735,7 +736,7 @@ section {
 
 /* ===== FOOTER ===== */
 .site-footer {
-  background: var(--navy-d);
+  background: #0e5f6e;
   padding: 32px 20px 20px;
   text-align: center;
 }
@@ -803,7 +804,7 @@ section {
 }
 
 .sticky-cta-btn:first-child {
-  background: var(--navy);
+  background: var(--navy-d);
   color: #fff;
 }
 
@@ -825,11 +826,14 @@ section {
     --demo-h: 36px;
   }
 
+  body { font-size: 17px; }
+
   .site-header {
     padding: 0 40px;
   }
 
-  .header-logo-text .name { font-size: 16px; }
+  .header-logo-text .name { font-size: 18px; }
+  .header-logo-text .sub  { font-size: 12px; }
 
   .header-tel { display: none; }
 
@@ -840,27 +844,26 @@ section {
   }
 
   .header-nav a {
-    font-size: 13px;
-    color: rgba(255,255,255,.8);
+    font-size: 14px;
+    color: var(--text-s);
     padding: 6px 12px;
     border-radius: 6px;
-    transition: background .15s;
+    transition: background .15s, color .15s;
     white-space: nowrap;
   }
 
-  .header-nav a:hover { background: rgba(255,255,255,.1); color: #fff; }
+  .header-nav a:hover { background: var(--warm); color: var(--navy); }
 
   .header-nav .nav-tel {
     display: flex;
     align-items: center;
     gap: 6px;
-    background: rgba(255,255,255,.12);
-    border: 1px solid rgba(255,255,255,.2);
+    background: var(--teal);
     border-radius: 24px;
-    padding: 6px 16px;
+    padding: 7px 18px;
     color: #fff;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .header-nav .nav-tel svg {
@@ -870,16 +873,54 @@ section {
   }
 
   .hero { padding: 80px 40px 72px; }
+  .hero h1 { font-size: clamp(28px, 4vw, 44px); }
+  .hero-sub { font-size: 16px; }
   .hero-cta-group { flex-direction: row; justify-content: center; }
   .hero-info { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hero-info-card .label { font-size: 12px; }
+  .hero-info-card .value { font-size: 15px; }
 
-  .section-inner { padding: 72px 40px; }
+  .section-inner {
+    padding: 80px 40px;
+    max-width: 860px;
+  }
 
-  .services-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .section-label { font-size: 12px; }
+  .section-title { font-size: clamp(24px, 3vw, 34px); margin-bottom: 12px; }
+  .section-desc  { font-size: 16px; }
+
+  .news-date   { font-size: 13px; }
+  .news-badge  { font-size: 12px; }
+  .news-text   { font-size: 16px; }
+
+  .schedule-table { font-size: 15px; }
+  .schedule-table thead th { font-size: 14px; }
+  .schedule-table .row-label { font-size: 14px; }
+  .schedule-note { font-size: 14px; }
+
+  .services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .service-title { font-size: 16px; }
+  .service-desc  { font-size: 14px; }
+
+  .about-card h3 { font-size: 22px; }
+  .about-card .about-title-sub { font-size: 14px; }
+  .about-card p  { font-size: 16px; }
+  .cert-item     { font-size: 15px; }
 
   .access-map { height: 320px; }
+  .access-row .content-label { font-size: 13px; }
+  .access-row .content-value { font-size: 16px; }
 
   .contact-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .contact-card-title { font-size: 15px; }
+  .contact-card-value { font-size: 18px; }
+  .contact-card-note  { font-size: 13px; }
+  .contact-tel-btn    { font-size: 18px; }
+
+  .footer-logo  { font-size: 18px; }
+  .footer-addr  { font-size: 14px; }
+  .footer-nav a { font-size: 14px; }
+  .footer-copy  { font-size: 12px; }
 
   .sticky-cta { display: none; }
 }
